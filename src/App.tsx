@@ -14,8 +14,8 @@ const App = () => {
   const classes = headerStyles();
   return (
     <Router>
-      <CssBaseline data-testid="css-baseline" />
-      <ThemeProvider data-testid="theme-provider" theme={theme}>
+      <CssBaseline />
+      <ThemeProvider theme={theme}>
         <div className="App">
           <Header />
           <div className={classes.content}>

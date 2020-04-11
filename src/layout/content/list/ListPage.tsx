@@ -1,5 +1,12 @@
 import React from 'react';
+import TodoList from '../../../components/todoList/TodoList';
 
-const ListPage = () => <div>List of todo items will go here.</div>;
+const ListPage = () => {
+  return (
+    <div>
+      <TodoList />
+    </div>
+  );
+};
 
 export default ListPage;

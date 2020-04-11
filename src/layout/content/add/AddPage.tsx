@@ -1,5 +1,10 @@
 import React from 'react';
+import Todo from '../../../components/todo/Todo';
 
-const AddPage = () => <div>Render form to handle adding a new todo here.</div>;
+const AddPage = () => (
+  <div>
+    <Todo />
+  </div>
+);
 
 export default AddPage;
