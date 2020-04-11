@@ -1,6 +1,6 @@
 import { makeStyles, Theme, createStyles } from '@material-ui/core';
 
-const drawerWidth = 240;
+export const drawerWidth = 240;
 const headerStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -37,13 +37,6 @@ const headerStyles = makeStyles((theme: Theme) =>
     toolbar: theme.mixins.toolbar,
     drawerPaper: {
       width: drawerWidth,
-    },
-    content: {
-      flexGrow: 1,
-      padding: theme.spacing(3),
-      [theme.breakpoints.up('sm')]: {
-        marginLeft: drawerWidth,
-      },
     },
     closeMenuButton: {
       marginTop: 10,

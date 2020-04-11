@@ -1,15 +1,10 @@
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
-import { mount } from 'enzyme';
-import App from '../../App';
 import Todo from './Todo';
+import { render } from '@testing-library/react';
 
-test('Test Rendering of Todo List Component on List Page', () => {
-  const wrappedApp = mount(
-    <MemoryRouter initialEntries={['/add']}>
-      <App />
-    </MemoryRouter>
-  );
+test('Test Rendering of Todo List Component', () => {
+  const { getByText } = render(<Todo />);
+  const todoText = getByText(/Todo Item Renders Here/i);
 
-  expect(wrappedApp.find(Todo)).toBeTruthy;
+  expect(todoText).toBeInTheDocument();
 });

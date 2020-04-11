@@ -34,10 +34,10 @@ const Header = () => {
   /* Since this context isn't needed stick it in an arrow function. */
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
-  /* Type can be inferred here, just adding for readability  */
   const drawer = (
     <div>
       <MenuList className={classes.menuList}>
+        {/* Type can be inferred here, just adding for readability */}
         {menuOptions.map((menuOption: MenuOption) => {
           const { desc, path, uuid, icon } = menuOption;
           return (

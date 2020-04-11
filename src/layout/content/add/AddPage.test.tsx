@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { mount } from 'enzyme';
 import App from '../../../App';
 import AddPage from './AddPage';
+import TodoForm from '../../../forms/todo/TodoForm';
 
 test('Test Add Page Component Renders From "/add".', () => {
   const wrappedApp = mount(
@@ -12,4 +13,5 @@ test('Test Add Page Component Renders From "/add".', () => {
   );
 
   expect(wrappedApp.find(AddPage)).toBeTruthy;
+  expect(wrappedApp.find(TodoForm)).toBeTruthy;
 });

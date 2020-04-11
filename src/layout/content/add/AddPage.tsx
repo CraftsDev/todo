@@ -1,9 +1,9 @@
 import React from 'react';
-import Todo from '../../../components/todo/Todo';
+import TodoForm from '../../../forms/todo/TodoForm';
 
 const AddPage = () => (
   <div>
-    <Todo />
+    <TodoForm />
   </div>
 );
 

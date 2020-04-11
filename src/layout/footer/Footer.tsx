@@ -2,7 +2,9 @@ import React from 'react';
 import { Container } from '@material-ui/core';
 
 const Footer = () => {
-  return <Container>Crafts Development &copy; 2020</Container>;
+  const today = new Date();
+  const year = today.getFullYear();
+  return <Container>Crafts Development &copy; {year}</Container>;
 };
 
 export default Footer;

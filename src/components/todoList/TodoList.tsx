@@ -1,11 +1,11 @@
 import React from 'react';
 
-interface TodoListProps {
+export interface TodoListProps {
   viewOnly: boolean;
 }
 
 const TodoList = (props: TodoListProps) => {
-  return <div>List of Todos Component</div>;
+  return <div id="todo-list">List of Todos Component</div>;
 };
 
 TodoList.defaultProps = {
