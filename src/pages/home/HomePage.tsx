@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography, makeStyles, createStyles, Theme, Paper, Link, Button } from '@material-ui/core';
-import { reusablePaperStyle } from '../../../styles/shared';
+import { reusablePaperStyle } from '../../styles/shared';
 
 const useHomePageStyle = makeStyles((theme: Theme) =>
   createStyles({ homepagePaper: { ...reusablePaperStyle(theme) } })

@@ -1,11 +1,10 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { mount } from 'enzyme';
 import App from './App';
 import Header from './layout/header/Header';
 import Footer from './layout/footer/Footer';
-import HomePage from './layout/content/home/HomePage';
+import HomePage from './pages/home/HomePage';
 
 test('Test App Home Page for child components.', () => {
   const wrappedApp = mount(

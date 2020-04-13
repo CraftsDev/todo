@@ -1,10 +1,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import ListPage from './layout/content/list/ListPage';
-import TodoFormPage from './layout/content/todoForm/TodoFormPage';
-import HomePage from './layout/content/home/HomePage';
 import { Container, makeStyles, createStyles, Theme } from '@material-ui/core';
-import ErrorPage from './layout/content/error/ErrorPage';
+import HomePage from './pages/home/HomePage';
+import ListPage from './pages/list/ListPage';
+import TodoFormPage from './pages/todoForm/TodoFormPage';
+import ErrorPage from './pages/error/ErrorPage';
 
 const appRouterStyles = makeStyles((theme: Theme) =>
   createStyles({

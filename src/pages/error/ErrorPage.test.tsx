@@ -1,8 +1,8 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { mount } from 'enzyme';
-import App from '../../../App';
 import ErrorPage from './ErrorPage';
+import App from '../../App';
 
 test('', () => {
   const wrappedApp = mount(

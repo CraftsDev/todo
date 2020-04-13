@@ -1,6 +1,6 @@
 import React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
-import TodoForm from '../../../forms/todo/TodoForm';
+import TodoForm from '../../forms/todo/TodoForm';
 
 const isEditOrAdd = (pathname: string) => {
   if (pathname.includes('edit')) return 'edit';
