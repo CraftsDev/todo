@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, makeStyles, createStyles, Theme, Paper } from '@material-ui/core';
+import { Typography, makeStyles, createStyles, Theme, Paper, Link, Button } from '@material-ui/core';
 import { reusablePaperStyle } from '../../../styles/shared';
 
 const useHomePageStyle = makeStyles((theme: Theme) =>
@@ -34,6 +34,13 @@ const HomePage = () => {
           only required field to create a new todo item, all other fields are optional. The name must be at least 3
           characters long and no longer than 255 characters. To provide a better UI/UX an additional delete and reset
           button are provided on the todo form.`}
+        </Typography>
+        <Typography variant="h5" align="center">
+          <Link href="https://github.com/CraftsDev/todo" target="_blank" underline="none">
+            <Button variant="contained" color="primary">
+              View the Github Project
+            </Button>
+          </Link>
         </Typography>
       </Paper>
     </div>
