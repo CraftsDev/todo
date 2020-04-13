@@ -6,3 +6,7 @@ export const reusablePaperStyle = (theme: Theme) => ({
   marginBottom: 2,
   padding: 20,
 });
+
+export const reusableIconStyle = (theme: Theme) => ({
+  marginRight: theme.spacing(1),
+});

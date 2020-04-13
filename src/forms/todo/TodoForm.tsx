@@ -28,7 +28,7 @@ import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { TodoListContext } from '../../App';
 import { ucFirst } from '../../core/helpers';
 import history from '../../history';
-import { reusablePaperStyle } from '../../styles/shared';
+import { reusablePaperStyle, reusableIconStyle } from '../../styles/shared';
 import TodoFormSchema from './TodoFormSchema';
 
 const useTodoFormStyles = makeStyles((theme: Theme) =>
@@ -41,6 +41,7 @@ const useTodoFormStyles = makeStyles((theme: Theme) =>
       fontSize: theme.typography.h5.fontSize,
       margin: '.5rem 0',
     },
+    icon: { ...reusableIconStyle(theme) },
   })
 );
 
@@ -179,18 +180,18 @@ const TodoForm = (props: { addEdit: 'add' | 'edit' } & RouteComponentProps<{ id:
                 <Box my={2}>
                   <ButtonGroup aria-label="outlined primary button group" fullWidth>
                     <Button variant="contained" type="reset">
-                      <RotateLeftIcon />
-                      {` Reset`}
+                      <RotateLeftIcon className={classes.icon} />
+                      {`Reset`}
                     </Button>
                     {id && (
                       <Button variant="contained" color="secondary" onClick={handleDelete()}>
-                        <DeleteIcon />
-                        {` Delete`}
+                        <DeleteIcon className={classes.icon} />
+                        {`Delete`}
                       </Button>
                     )}
                     <Button variant="contained" type="submit" color="primary">
-                      {addEdit === 'add' ? <AddIcon /> : <EditIcon />}
-                      {` submit ${addEdit}`}
+                      {addEdit === 'add' ? <AddIcon className={classes.icon} /> : <EditIcon className={classes.icon} />}
+                      {`submit ${addEdit}`}
                     </Button>
                   </ButtonGroup>
                 </Box>

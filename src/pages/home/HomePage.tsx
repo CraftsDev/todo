@@ -1,10 +1,10 @@
 import React from 'react';
 import { Typography, makeStyles, createStyles, Theme, Paper, Link, Button } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import { reusablePaperStyle } from '../../styles/shared';
+import { reusablePaperStyle, reusableIconStyle } from '../../styles/shared';
 
 const useHomePageStyle = makeStyles((theme: Theme) =>
-  createStyles({ homepagePaper: { ...reusablePaperStyle(theme) } })
+  createStyles({ homepagePaper: { ...reusablePaperStyle(theme) }, icon: { ...reusableIconStyle(theme) } })
 );
 
 const HomePage = () => {
@@ -39,8 +39,8 @@ const HomePage = () => {
         <Typography variant="h5" align="center">
           <Link href="https://github.com/CraftsDev/todo" target="_blank" underline="none">
             <Button variant="contained" color="primary">
-              <GitHubIcon />
-              {` View the Github Project`}
+              <GitHubIcon className={classes.icon} />
+              {`View the Github Project`}
             </Button>
           </Link>
         </Typography>
