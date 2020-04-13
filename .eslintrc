@@ -13,10 +13,7 @@
       "jsx": true
     }
   },
-  "rules": {
-    "react/no-unescaped-entities": 0,
-    "no-unescaped-entities": 0
-  },
+  "rules": {},
   "settings": {
     "react": {
       "version": "detect"
