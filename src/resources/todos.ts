@@ -2,7 +2,7 @@ import moment from 'moment';
 
 export const emptyTodoArray = new Array<Todo>();
 
-/* Act like we're getting date automatically from endpoint. */
+/* Act like we're getting date automatically from endpoint, could be used for mocking. */
 export default [
   {
     id: 1,

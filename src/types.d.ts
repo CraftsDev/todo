@@ -1,7 +1,6 @@
-interface MakeStyleClasses {
-  classes: ClassNameMap<string>;
-}
+/// <reference types="react-scripts" />
 
+/* Todos */
 interface Todo {
   id: number;
   name: string;
@@ -16,3 +15,13 @@ interface Todo {
 type TodoList = Todo[];
 
 type SetTodoList = Dispatch<SetStateAction<Todo[]>> | null;
+
+/* Menus */
+interface MenuOption {
+  uuid: string;
+  desc: string;
+  path: string;
+  icon: string;
+}
+
+type MenuOptions = MenuOption[];

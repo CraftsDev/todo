@@ -14,7 +14,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import MenuIcon from '@material-ui/icons/Menu';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import MenuOptions, { MenuOption } from '../../resources/menuItems';
+import MenuOptions from '../../resources/menuItems';
 import headerStyles from './headerStyles';
 import logo from './todo-logo.png';
 
