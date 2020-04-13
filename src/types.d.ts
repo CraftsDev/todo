@@ -1,5 +1,3 @@
-/// <reference types="react-scripts" />
-
 /* Todos */
 interface Todo {
   id: number;
