@@ -1,5 +1,6 @@
 import React from 'react';
 import { Typography, makeStyles, createStyles, Theme, Paper, Link, Button } from '@material-ui/core';
+import GitHubIcon from '@material-ui/icons/GitHub';
 import { reusablePaperStyle } from '../../styles/shared';
 
 const useHomePageStyle = makeStyles((theme: Theme) =>
@@ -38,7 +39,8 @@ const HomePage = () => {
         <Typography variant="h5" align="center">
           <Link href="https://github.com/CraftsDev/todo" target="_blank" underline="none">
             <Button variant="contained" color="primary">
-              View the Github Project
+              <GitHubIcon />
+              {` View the Github Project`}
             </Button>
           </Link>
         </Typography>
