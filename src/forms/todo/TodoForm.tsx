@@ -4,18 +4,19 @@ import {
   ButtonGroup,
   Checkbox,
   createStyles,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
   FormControlLabel,
   makeStyles,
   Paper,
   TextField,
   Theme,
   Typography,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogContentText,
-  DialogActions,
 } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
@@ -25,10 +26,10 @@ import moment from 'moment';
 import React, { useContext, useEffect, useState } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { TodoListContext } from '../../App';
+import { ucFirst } from '../../core/helpers';
 import history from '../../history';
 import { reusablePaperStyle } from '../../styles/shared';
 import TodoFormSchema from './TodoFormSchema';
-import { ucFirst } from '../../core/helpers';
 
 const useTodoFormStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -157,7 +158,7 @@ const TodoForm = (props: { addEdit: 'add' | 'edit' } & RouteComponentProps<{ id:
                 </Box>
                 {has && (
                   <Box my={2}>
-                    {/* deprecated findDomNode use occuring inside this component */}
+                    {/* deprecated findDomNode use occuring inside this component, doesn't occur in production */}
                     <KeyboardDatePicker
                       margin="normal"
                       name="exp.date"
@@ -178,15 +179,18 @@ const TodoForm = (props: { addEdit: 'add' | 'edit' } & RouteComponentProps<{ id:
                 <Box my={2}>
                   <ButtonGroup aria-label="outlined primary button group" fullWidth>
                     <Button variant="contained" type="reset">
-                      <RotateLeftIcon /> Reset
+                      <RotateLeftIcon />
+                      {` Reset`}
                     </Button>
                     {id && (
                       <Button variant="contained" color="secondary" onClick={handleDelete()}>
-                        <DeleteIcon /> Delete
+                        <DeleteIcon />
+                        {` Delete`}
                       </Button>
                     )}
                     <Button variant="contained" type="submit" color="primary">
-                      <EditIcon /> {ucFirst(addEdit)}
+                      {addEdit === 'add' ? <AddIcon /> : <EditIcon />}
+                      {` submit ${addEdit}`}
                     </Button>
                   </ButtonGroup>
                 </Box>
