@@ -14,3 +14,5 @@ interface Todo {
 }
 
 type TodoList = Todo[];
+
+type SetTodoList = Dispatch<SetStateAction<Todo[]>> | null;

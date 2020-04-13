@@ -1,30 +1,22 @@
+import {
+  AppBar,
+  Drawer,
+  Hidden,
+  IconButton,
+  MenuItem,
+  MenuList,
+  Toolbar,
+  useTheme,
+  Typography,
+} from '@material-ui/core';
+import Icon from '@material-ui/core/Icon';
+import CloseIcon from '@material-ui/icons/Close';
+import MenuIcon from '@material-ui/icons/Menu';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useTheme, AppBar, Toolbar, IconButton, Hidden, Drawer, MenuItem, MenuList } from '@material-ui/core';
-import Icon from '@material-ui/core/Icon';
-import MenuIcon from '@material-ui/icons/Menu';
-import CloseIcon from '@material-ui/icons/Close';
-import { v4 as uuid } from 'uuid';
+import MenuOptions, { MenuOption } from '../../resources/menuItems';
 import headerStyles from './headerStyles';
 import logo from './todo-logo.png';
-
-/* For sake of type hinting and readability let creates some interfaces/types */
-interface MenuOption {
-  uuid: string;
-  desc: string;
-  path: string;
-  icon: string;
-}
-type MenuOptions = MenuOption[];
-
-/* This value could come from an endpoint/service */
-const menuOptions: MenuOptions = [
-  { uuid: uuid(), desc: 'Read Todo Items', path: '/list', icon: 'list' },
-  { uuid: uuid(), desc: 'Create Todo Item', path: '/add', icon: 'add' },
-];
-
-/* Add Header Specific Props Here */
-type HeaderProps = MakeStyleClasses;
 
 const Header = () => {
   const classes = headerStyles();
@@ -35,15 +27,23 @@ const Header = () => {
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
   const drawer = (
-    <div>
+    <div id="header">
       <MenuList className={classes.menuList}>
         {/* Type can be inferred here, just adding for readability */}
-        {menuOptions.map((menuOption: MenuOption) => {
+        {MenuOptions.map((menuOption: MenuOption) => {
           const { desc, path, uuid, icon } = menuOption;
           return (
-            <MenuItem component={Link} to={path} button key={uuid} className={classes.menuItem}>
-              {desc}
-              <Icon className={classes.menuItemIcon}>{icon}</Icon>
+            <MenuItem
+              component={Link}
+              to={path}
+              button
+              key={uuid}
+              className={classes.menuItem}
+              onClick={() => setMobileOpen(false)}>
+              <Typography>{desc}</Typography>
+              <Icon className={classes.menuItemIcon} color="primary">
+                {icon}
+              </Icon>
             </MenuItem>
           );
         })}

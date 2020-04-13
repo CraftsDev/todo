@@ -1,6 +1,6 @@
 import { makeStyles, Theme, createStyles } from '@material-ui/core';
 
-export const drawerWidth = 240;
+export const drawerWidth = 160;
 const headerStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -22,7 +22,7 @@ const headerStyles = makeStyles((theme: Theme) =>
       },
     },
     menuList: {
-      paddingTop: 30,
+      paddingTop: 50,
     },
     menuItem: {
       paddingLeft: 25,
@@ -45,7 +45,7 @@ const headerStyles = makeStyles((theme: Theme) =>
     },
     logo: {
       padding: '10px 0',
-      maxWidth: '120px',
+      maxWidth: '180px',
     },
   })
 );
