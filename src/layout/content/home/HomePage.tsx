@@ -10,8 +10,8 @@ const HomePage = () => {
   const classes = useHomePageStyle();
   return (
     <div>
-      <Typography variant="h3" color="primary">
-        Welcome to the Crafts Development Todo Application!
+      <Typography variant="h3" color="primary" align="center">
+        Welcome to the Crafts Development Todo Application
       </Typography>
       <Paper className={classes.homepagePaper}>
         <Typography paragraph>
@@ -20,8 +20,7 @@ const HomePage = () => {
         </Typography>
         <Typography paragraph>
           {`To navigate the application you can utilize the navigation links to the left on desktop, and in the drawer
-          that is toggled by the hamburger navigation on Mobile. Two pages are provided, the "Todo Items" and "Create
-          Todo Item" pages.`}
+          that is toggled by the hamburger navigation on Mobile. Two pages are provided, the "Todo List" and "New Todo" pages.`}
         </Typography>
         <Typography paragraph>
           {`The "Todo List" page gives you the ability to both view/edit a list of todo items. You have the ability to
@@ -35,6 +34,7 @@ const HomePage = () => {
           characters long and no longer than 255 characters. To provide a better UI/UX an additional delete and reset
           button are provided on the todo form.`}
         </Typography>
+        <Typography paragraph>{`Enjoy and get productive!`}</Typography>
         <Typography variant="h5" align="center">
           <Link href="https://github.com/CraftsDev/todo" target="_blank" underline="none">
             <Button variant="contained" color="primary">
