@@ -16,7 +16,7 @@ type SetTodoList = Dispatch<SetStateAction<Todo[]>> | null;
 
 /* Menus */
 interface MenuOption {
-  uuid: string;
+  id: string;
   desc: string;
   path: string;
   icon: string;

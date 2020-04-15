@@ -31,13 +31,14 @@ const Header = () => {
       <MenuList className={classes.menuList}>
         {/* Type can be inferred here, just adding for readability */}
         {MenuOptions.map((menuOption: MenuOption) => {
-          const { desc, path, uuid, icon } = menuOption;
+          const { desc, path, id, icon } = menuOption;
           return (
             <MenuItem
+              data-testid={`${id}-menu-item`}
               component={Link}
               to={path}
               button
-              key={uuid}
+              key={id}
               className={classes.menuItem}
               onClick={() => setMobileOpen(false)}>
               <Typography>{desc}</Typography>
@@ -64,7 +65,7 @@ const Header = () => {
             <MenuIcon />
           </IconButton>
           <Link to="/">
-            <img src={logo} className={`${classes.logo}`} alt="todo - By Crafts Development" />
+            <img src={logo} className={`${classes.logo}`} alt="todo - By Crafts Development" data-testid="logo" />
           </Link>
         </Toolbar>
       </AppBar>

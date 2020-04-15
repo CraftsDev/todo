@@ -1,20 +1,19 @@
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
-import { mount } from 'enzyme';
+import { Router } from 'react-router-dom';
+import { render } from '@testing-library/react';
 import App from './App';
-import Header from './layout/header/Header';
-import Footer from './layout/footer/Footer';
-import HomePage from './pages/home/HomePage';
+import history from './history';
 
-test('Test App Home Page for child components.', () => {
-  const wrappedApp = mount(
-    <MemoryRouter initialEntries={['/']}>
+describe('Test Entry App', () => {
+  const wrappedApp = render(
+    <Router history={history}>
       <App />
-    </MemoryRouter>
+    </Router>
   );
 
-  /* This makes the other test a little redundant, but alas, test files must have a test. */
-  expect(wrappedApp.find(Header)).toBeTruthy;
-  expect(wrappedApp.find(HomePage)).toBeTruthy;
-  expect(wrappedApp.find(Footer)).toBeTruthy;
+  test('Test iniatially render on home page.', () => {
+    /* initially home page should render */
+    const hometitle = wrappedApp.getByText('Welcome to the Crafts Development Todo Application');
+    expect(hometitle).toBeTruthy();
+  });
 });

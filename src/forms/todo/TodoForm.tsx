@@ -119,6 +119,7 @@ const TodoForm = (props: { addEdit: 'add' | 'edit' } & RouteComponentProps<{ id:
                 {/* DRY - this could be turned into a reusable piece. */}
                 <Box my={2}>
                   <TextField
+                    data-testid="nameField"
                     id="nameField"
                     name="name"
                     label="Name"
@@ -131,6 +132,7 @@ const TodoForm = (props: { addEdit: 'add' | 'edit' } & RouteComponentProps<{ id:
                 </Box>
                 <Box my={2}>
                   <TextField
+                    data-testid="descField"
                     id="descField"
                     name="desc"
                     label="Description"
@@ -145,6 +147,7 @@ const TodoForm = (props: { addEdit: 'add' | 'edit' } & RouteComponentProps<{ id:
                 </Box>
                 <Box my={2}>
                   <FormControlLabel
+                    data-testid="hasExpDateField"
                     id="hasExpDateField"
                     name="exp.has"
                     label="Add Expiration Date"
@@ -163,6 +166,7 @@ const TodoForm = (props: { addEdit: 'add' | 'edit' } & RouteComponentProps<{ id:
                     <KeyboardDatePicker
                       margin="normal"
                       name="exp.date"
+                      data-testid="expDateField"
                       id="expDateField"
                       label="Date"
                       format="MM/DD/YYYY"

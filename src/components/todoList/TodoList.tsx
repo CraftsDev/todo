@@ -109,7 +109,11 @@ const TodoList = (props: ListProps) => {
         <Typography variant="h3" color="primary">
           Todo List: {total} ({readEdit})
         </Typography>
-        <Fab variant="extended" className={classes.fab} onClick={() => history.push(`/${opposite}-list`)}>
+        <Fab
+          variant="extended"
+          className={classes.fab}
+          onClick={() => history.push(`/${opposite}-list`)}
+          data-testid={`${opposite}list-toggle`}>
           {opposite === 'read' ? (
             <VisibilityIcon className={classes.viewOnlyToggle} color="primary" />
           ) : (
